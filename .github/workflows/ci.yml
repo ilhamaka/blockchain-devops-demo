@@ -1,0 +1,37 @@
+name:  CI Pipeline Blockchain
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  quality-check:
+    name: Tests de Qualité
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name:  Récupérer le code
+      uses: actions/checkout@v4
+      
+    - name:  Configurer Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+        cache: 'npm'
+        
+    - name:  Exécuter les tests
+      run: node test.js
+      
+    - name:  Tests réussis
+      if: success()
+      run: |
+        echo " Tous les tests sont passés !"
+        echo " Prêt pour le déploiement en production"
+        
+    - name:  Tests échoués
+      if: failure()
+      run: |
+        echo " Des tests ont échoué !"
+        echo " Le déploiement est bloqué pour éviter des erreurs en production"
