@@ -1,5 +1,5 @@
 // Simulation d'un smart contract de compteur
-export class Counter {
+class Counter {
   constructor() {
     this.count = 0;
   }
@@ -17,7 +17,7 @@ export class Counter {
 }
 
 // Simulation d'un contrat de portefeuille
-export class Wallet {
+class Wallet {
   constructor() {
     this.balance = 0;
   }
@@ -38,3 +38,6 @@ export class Wallet {
     return this.balance;
   }
 }
+
+// Export CommonJS
+module.exports = { Counter, Wallet };
