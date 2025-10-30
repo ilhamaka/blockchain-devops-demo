@@ -1,5 +1,5 @@
 // REMPLACER TOUT LE FICHIER par :
-import { Counter, Wallet } from './blockchain.js';
+const { Counter, Wallet } = require('./blockchain.js');
 
 console.log("🧪 LANCEMENT DES TESTS BLOCKCHAIN...");
 console.log("=====================================");
