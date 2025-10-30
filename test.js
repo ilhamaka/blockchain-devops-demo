@@ -14,7 +14,7 @@ try {
   console.log("✅ Test 1 - Après incrément:", newValue);
   
   // VÉRIFICATION CRITIQUE
-  if (newValue === 1) {
+  if (newValue === 999) { // bugs
     console.log("✅ TEST COMPTEUR - RÉUSSI");
   } else {
     console.log("❌ TEST COMPTEUR - ÉCHEC");
